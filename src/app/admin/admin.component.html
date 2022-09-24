@@ -1,0 +1,24 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="col-lg-8 mx-auto">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">R.No</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <th scope="col">Qty</th>
+      </tr>
+      <tr *ngFor="let item of list; index as i" [ngStyle]="{'color' : item.status === 'available' ? 'green' : 'red'}">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.status}}</td>
+        <td *ngIf='qty'>{{qty}}</td>
+      </tr>
+    </thead>
+  </table>
+</div>
