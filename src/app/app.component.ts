@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +9,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'userAdmin';
-  alert ='Admins only Allowed';
+  
 
   constructor(public router:Router){
 
   }
 
   gotoAdmin(){
-    this.router.navigateByUrl('/admin')
+    this.router.navigate(['/home'])
   }
  
-  public gotoUser() {
-    this.router.navigateByUrl('/root')
-    alert(this.alert);
-  }
 
 }

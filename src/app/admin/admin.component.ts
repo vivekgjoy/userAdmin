@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { count } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -13,8 +12,13 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  qty=1;
+  qty='available';
+  qty1 ='not-available';
   status = 'available';
+
+  isAdmin = true;
+  message = 'Authorized persons only';
+
   list = [
     {
         name : 'samsung',
@@ -43,8 +47,14 @@ export class AdminComponent implements OnInit {
     },
     ]
     
-  quantity(){
-    
+    gotouser(){
+      alert(this.message);
+  }
+  gotoServices(){
+    this.router.navigate(['/services'])
+  }
+  gotoHome(){
+    this.router.navigate(['/home'])
   }
 
 }

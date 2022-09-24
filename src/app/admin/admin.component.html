@@ -1,8 +1,9 @@
+<h1>Welcome admin...</h1>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<div class="col-lg-8 mx-auto">
+<div class="col-lg-8 mx-auto" *ngIf="isAdmin; else enter">
 <table class="table">
     <thead>
       <tr>
@@ -17,8 +18,16 @@
         <td>{{item.name}}</td>
         <td>{{item.price}}</td>
         <td>{{item.status}}</td>
-        <td *ngIf='qty'>{{qty}}</td>
+        <td>{{qty}}</td>
       </tr>
     </thead>
   </table>
 </div>
+<ng-template #enter>
+<p>Hi admin</p>
+</ng-template>
+<form >
+    <button class="btn btn-primary" (click)="gotoServices()">Admin Login</button>
+    <button class="btn btn-primary" (click)="gotoHome()">Goto Home</button>
+</form>
+<button class="btn btn-primary" (click)="gotouser()">Goto Home</button>
